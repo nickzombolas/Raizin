@@ -85,7 +85,7 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     inSkinType.putExtra("skinTypeChosen", "Oily Skin");
                     startActivity(inSkinType);
 
-                    Intent inTimer=new Intent(getApplicationContext(), TimeOutsideActivity.class);
+                    Intent inTimer=new Intent(getApplicationContext(), HomeFeed.class);
                     inTimer.putExtra("spfFactor", spfFactor);
                     inTimer.putExtra("estimatedTime", estimatedTime);    //was estimatedTime
                     inTimer.putExtra("skinTypeChosen", "Oily Skin");
