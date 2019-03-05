@@ -22,9 +22,6 @@ public class LoginorSignUpActivity extends AppCompatActivity {
 
    SharedPreferences sharedPreferences;
 
-    public static final String MyPREFERENCES = "MyPrefs";
-    //public static final String email = "emailKey";
-    //public static final String password = "passwordKey";
     public static final String DEFAULT_VALUE="default";
 
 

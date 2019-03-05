@@ -89,7 +89,7 @@ public class TimeOutsideActivity extends AppCompatActivity {
                     public void onFinish() {
                         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-                        // Vibrate for 400 milliseconds
+                        // Vibrate for 4000 milliseconds
                         v.vibrate(4000);
                     }
                 }.start();

@@ -19,11 +19,7 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
     String skinTypeSelection;
     Button submit;
     Button cancel;
-    //double oilySkinFactor=30;
-    //double drySkinFactor=30;
-    //double combinationSkinFactor=15;
-    //double normalSkinFactor=0;
-    //double estimatedTimeWithSkinType;
+
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
@@ -76,18 +72,16 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-                    //estimatedTime=estimatedTime+0.5;
-                    //double oilySkinFactor=30;
-                    //double estimatedTimeWithSkinType=estimatedTime+oilySkinFactor;
+
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
-                    inSkinType.putExtra("estimatedTime", estimatedTime);    //was estimatedTime
+                    inSkinType.putExtra("estimatedTime", estimatedTime);
                     inSkinType.putExtra("skinTypeChosen", "Oily Skin");
                     startActivity(inSkinType);
 
                     Intent inTimer=new Intent(getApplicationContext(), HomeFeed.class);
                     inTimer.putExtra("spfFactor", spfFactor);
-                    inTimer.putExtra("estimatedTime", estimatedTime);    //was estimatedTime
+                    inTimer.putExtra("estimatedTime", estimatedTime);
                     inTimer.putExtra("skinTypeChosen", "Oily Skin");
                     startActivity(inTimer);
                 }
@@ -98,12 +92,10 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-                    //estimatedTime=estimatedTime-0.5;
-                    //double drySkinFactor=30;
-                    //double estimatedTimeWithSkinType=estimatedTime+drySkinFactor;
+
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
-                    inSkinType.putExtra("estimatedTime", estimatedTime);                //was estimatedTime
+                    inSkinType.putExtra("estimatedTime", estimatedTime);
                     inSkinType.putExtra("skinTypeChosen", "Dry Skin");
                     startActivity(inSkinType);
                 }
@@ -114,12 +106,10 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-                    //estimatedTime=estimatedTime-0.25;
-                    //double combinationSkinFactor=15;
-                    //double estimatedTimeWithSkinType=estimatedTime+combinationSkinFactor;
+
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
-                    inSkinType.putExtra("estimatedTime", estimatedTime);                            //was estimatedTime
+                    inSkinType.putExtra("estimatedTime", estimatedTime);
                     inSkinType.putExtra("skinTypeChosen", "Combination Skin");
                     startActivity(inSkinType);
                 }
@@ -130,17 +120,13 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-                    //double normalSkinFactor=0;
-                    //double estimatedTimeWithSkinType=estimatedTime+normalSkinFactor;
+
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
-                    inSkinType.putExtra("estimatedTime", estimatedTime);            //was estimatedTime
+                    inSkinType.putExtra("estimatedTime", estimatedTime);
                     inSkinType.putExtra("skinTypeChosen", "Normal Skin");
                     startActivity(inSkinType);
                 }
-
-                //Intent intent = new Intent(getApplicationContext(), HomeFeed.class);
-                //startActivity(intent);
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {

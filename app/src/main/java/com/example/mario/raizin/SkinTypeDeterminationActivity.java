@@ -29,7 +29,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
     String skinToneSelection;
     String dialogFragmentSkinType=new String();
     TextView skinTypeChosen;
-    //HomeFeed homefeedObject;
+
 
 
 
@@ -59,8 +59,6 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     timeBeforeBurnWithoutSunscreen=10;
                     estimatedTimeOfSunscreenDuration=((recommendedSPFLevelNumber*timeBeforeBurnWithoutSunscreen));
                     skinToneSelection="Pale white skin";
-
-
                 }
                 else if(selectedSkinTone=="      White skin")
                 {
@@ -113,8 +111,6 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                 //need to prevent if skin type from dialog fragment isn't chosen and aslo if item from listview isn't selected
                 if(skinToneSelection=="Pale white skin")
                 {
-                    estimatedTimeOfSunscreenDuration=((recommendedSPFLevelNumber*timeBeforeBurnWithoutSunscreen));
-
                     Intent in=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);  //was HomeFeed.class
                     in.putExtra("spfFactor","30");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));   //was divide by 60
@@ -136,22 +132,10 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                 }
                 else if(skinToneSelection=="Brown skin")
                 {
-                    //Toast.makeText(getApplicationContext(), dialogFragmentSkinType, Toast.LENGTH_SHORT).show();
-                    /*if(dialogFragmentSkinType=="Oily")
-                    {
-                        Intent inType=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
-                        inType.putExtra("skinType","Oily");
-                        startActivity(inType);
-                        Intent in=new Intent(getApplicationContext(), HomeFeed.class);
-                        in.putExtra("spfFactor","15");
-                        startActivity(in);
-                    }*/
-                    //else {
                         Intent in = new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                         in.putExtra("spfFactor", "15");
                         in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
                         startActivity(in);
-                    //}
                 }
                 else if(skinToneSelection=="Dark brown or black skin")
                 {
@@ -160,8 +144,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
                     startActivity(in);
                 }
-                //Intent intent = new Intent(getApplicationContext(), HomeFeed.class);
-                //startActivity(intent);
+
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -172,12 +155,6 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
             }
         });
     }
-    /*public void openDialogFragment()                                                                //declaration of an openDialogFragment that is used to create and open a dialog fragment
-    {
-        Dialog_Fragment dialog=new Dialog_Fragment();
-        dialog.show(getSupportFragmentManager(),"DialogFragment");
-    }*/
-
 }
 
 
