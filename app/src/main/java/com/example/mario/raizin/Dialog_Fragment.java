@@ -42,10 +42,7 @@ public class Dialog_Fragment extends AppCompatDialogFragment {
                         //store these two values into the database
                         if(selection=="Oily")
                         {
-
-
                             //extend the sunscreen duration time by 30 mins
-
                         }
                         else if(selection=="Dry")
                         {
@@ -59,45 +56,10 @@ public class Dialog_Fragment extends AppCompatDialogFragment {
 
                     }
                 });
-        //editTextCode=view.findViewById(R.id.firstField);                                    //connect the editTextCode object to the xml element
-        //editTextTitle=view.findViewById(R.id.secondField);                                  //connect the editTextTitle object to the xml element
         radioGroup=view.findViewById(R.id.RadioGroup);
         int radioId=radioGroup.getCheckedRadioButtonId();
         radioButton=view.findViewById(radioId);
-
-        //radioButton=view.findViewById(R.id.oilyOptionSelected);
-        //radioButtonDry=view.findViewById(R.id.dryOptionSelected);
         return builder.create();                                                            //use the builder to create the dialog fragment
     }
-    public void checkButton()
-    {
-
-        int radioId=radioGroup.getCheckedRadioButtonId();
-
-        if(radioId==1)
-        {
-            skinTypeDeterminationActivityObject.dialogFragmentSkinType="Oily";
-        }
-
-        //radioButton=findViewById(R.id.oilyOptionSelected);
-        //Toast.makeText(getApplicationContext(), "Worked", Toast.LENGTH_SHORT).show();
-    }
-    /*public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.oilyOptionSelected:
-                if (checked)
-                    // Pirates are the best
-
-                    break;
-            case R.id.dryOptionSelected:
-                if (checked)
-                    // Ninjas rule
-                    break;
-        }
-    }*/
 
 }
