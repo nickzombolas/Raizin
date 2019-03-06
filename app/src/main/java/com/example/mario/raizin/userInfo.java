@@ -91,53 +91,53 @@ public class userInfo extends AppCompatActivity {
                     //need to check whether what the user typed is indeed an email addres
                     for(int i=0; i<=emailAddressRetrieve.length()-1; i++)
                     {
-                        if((emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='g')&&(emailAddressRetrieve.charAt(i+2)=='m')&&(emailAddressRetrieve.charAt(i+3)=='a')&&(emailAddressRetrieve.charAt(i+4)=='i')&&(emailAddressRetrieve.charAt(i+5)=='l')&&(emailAddressRetrieve.charAt(i+6)=='.')&&(emailAddressRetrieve.charAt(i+7)=='c')&&(emailAddressRetrieve.charAt(i+8)=='o')&&(emailAddressRetrieve.charAt(i+9)=='m'))
+                        if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='g')&&(emailAddressRetrieve.charAt(i+2)=='m')&&(emailAddressRetrieve.charAt(i+3)=='a')&&(emailAddressRetrieve.charAt(i+4)=='i')&&(emailAddressRetrieve.charAt(i+5)=='l')&&(emailAddressRetrieve.charAt(i+6)=='.')&&(emailAddressRetrieve.charAt(i+7)=='c')&&(emailAddressRetrieve.charAt(i+8)=='o')&&(emailAddressRetrieve.charAt(i+9)=='m'))
                         {
                             //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            Toast.makeText(getApplicationContext(), "gmail.com match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "gmail.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='g')&&(emailAddressRetrieve.charAt(i+2)=='m')&&(emailAddressRetrieve.charAt(i+3)=='a')&&(emailAddressRetrieve.charAt(i+4)=='i')&&(emailAddressRetrieve.charAt(i+5)=='l')&&(emailAddressRetrieve.charAt(i+6)=='.')&&(emailAddressRetrieve.charAt(i+7)=='c')&&(emailAddressRetrieve.charAt(i+8)=='a'))
+                        else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='g')&&(emailAddressRetrieve.charAt(i+2)=='m')&&(emailAddressRetrieve.charAt(i+3)=='a')&&(emailAddressRetrieve.charAt(i+4)=='i')&&(emailAddressRetrieve.charAt(i+5)=='l')&&(emailAddressRetrieve.charAt(i+6)=='.')&&(emailAddressRetrieve.charAt(i+7)=='c')&&(emailAddressRetrieve.charAt(i+8)=='a'))
                         {
                             //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            Toast.makeText(getApplicationContext(), "gmail.ca match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "gmail.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='o')&&(emailAddressRetrieve.charAt(i+2)=='u')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='l')&&(emailAddressRetrieve.charAt(i+5)=='o')&&(emailAddressRetrieve.charAt(i+6)=='o')&&(emailAddressRetrieve.charAt(i+7)=='o')&&(emailAddressRetrieve.charAt(i+8)=='k')&&(emailAddressRetrieve.charAt(i+9)=='.')&&(emailAddressRetrieve.charAt(i+10)=='c')&&(emailAddressRetrieve.charAt(i+11)=='o')&&(emailAddressRetrieve.charAt(i+12)=='m'))
+                        else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='o')&&(emailAddressRetrieve.charAt(i+2)=='u')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='l')&&(emailAddressRetrieve.charAt(i+5)=='o')&&(emailAddressRetrieve.charAt(i+6)=='o')&&(emailAddressRetrieve.charAt(i+7)=='o')&&(emailAddressRetrieve.charAt(i+8)=='k')&&(emailAddressRetrieve.charAt(i+9)=='.')&&(emailAddressRetrieve.charAt(i+10)=='c')&&(emailAddressRetrieve.charAt(i+11)=='o')&&(emailAddressRetrieve.charAt(i+12)=='m'))
                         {
                             //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            Toast.makeText(getApplicationContext(), "outlook.com match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "outlook.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='o')&&(emailAddressRetrieve.charAt(i+2)=='u')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='l')&&(emailAddressRetrieve.charAt(i+5)=='o')&&(emailAddressRetrieve.charAt(i+6)=='o')&&(emailAddressRetrieve.charAt(i+7)=='o')&&(emailAddressRetrieve.charAt(i+8)=='k')&&(emailAddressRetrieve.charAt(i+9)=='.')&&(emailAddressRetrieve.charAt(i+10)=='c')&&(emailAddressRetrieve.charAt(i+11)=='a'))
+                        else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='o')&&(emailAddressRetrieve.charAt(i+2)=='u')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='l')&&(emailAddressRetrieve.charAt(i+5)=='o')&&(emailAddressRetrieve.charAt(i+6)=='o')&&(emailAddressRetrieve.charAt(i+7)=='o')&&(emailAddressRetrieve.charAt(i+8)=='k')&&(emailAddressRetrieve.charAt(i+9)=='.')&&(emailAddressRetrieve.charAt(i+10)=='c')&&(emailAddressRetrieve.charAt(i+11)=='a'))
                         {
                             //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            Toast.makeText(getApplicationContext(), "outlook.ca match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "outlook.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='h')&&(emailAddressRetrieve.charAt(i+2)=='o')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='m')&&(emailAddressRetrieve.charAt(i+5)=='a')&&(emailAddressRetrieve.charAt(i+6)=='i')&&(emailAddressRetrieve.charAt(i+7)=='l')&&(emailAddressRetrieve.charAt(i+8)=='.')&&(emailAddressRetrieve.charAt(i+9)=='c')&&(emailAddressRetrieve.charAt(i+10)=='o')&&(emailAddressRetrieve.charAt(i+11)=='m'))
+                        else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='h')&&(emailAddressRetrieve.charAt(i+2)=='o')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='m')&&(emailAddressRetrieve.charAt(i+5)=='a')&&(emailAddressRetrieve.charAt(i+6)=='i')&&(emailAddressRetrieve.charAt(i+7)=='l')&&(emailAddressRetrieve.charAt(i+8)=='.')&&(emailAddressRetrieve.charAt(i+9)=='c')&&(emailAddressRetrieve.charAt(i+10)=='o')&&(emailAddressRetrieve.charAt(i+11)=='m'))
                         {
                             //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            Toast.makeText(getApplicationContext(), "hotmail.com match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "hotmail.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='h')&&(emailAddressRetrieve.charAt(i+2)=='o')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='m')&&(emailAddressRetrieve.charAt(i+5)=='a')&&(emailAddressRetrieve.charAt(i+6)=='i')&&(emailAddressRetrieve.charAt(i+7)=='l')&&(emailAddressRetrieve.charAt(i+8)=='.')&&(emailAddressRetrieve.charAt(i+9)=='c')&&(emailAddressRetrieve.charAt(i+10)=='a'))
+                        else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='h')&&(emailAddressRetrieve.charAt(i+2)=='o')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='m')&&(emailAddressRetrieve.charAt(i+5)=='a')&&(emailAddressRetrieve.charAt(i+6)=='i')&&(emailAddressRetrieve.charAt(i+7)=='l')&&(emailAddressRetrieve.charAt(i+8)=='.')&&(emailAddressRetrieve.charAt(i+9)=='c')&&(emailAddressRetrieve.charAt(i+10)=='a'))
                         {
                             //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            Toast.makeText(getApplicationContext(), "hotmail.ca match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "hotmail.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if(i==(emailAddressRetrieve.length()-1))
                         {
 
                             emailAddressCheck=false;
-                            Toast.makeText(getApplicationContext(), "Please enter a proper email address yo", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Please enter a proper email address", Toast.LENGTH_SHORT).show();
                             break;
                         }
                     }
