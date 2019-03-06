@@ -23,6 +23,10 @@ public class HomeFeed extends AppCompatActivity {
     TextView recommendedIntervalOfApplicationObject;
     TextView skinTypeDisplayObject;
 
+    public void onBackPressed() {
+        //super.onBackPressed();
+        // dont call **super**, if u want disable back button in current screen.
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
