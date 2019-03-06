@@ -56,34 +56,34 @@ public class LoginorSignUpActivity extends AppCompatActivity {
                     //need to check whether what the user typed is indeed an email addres
                     for(int i=0; i<=emailRetrieve.length()-1; i++)
                     {
-                        if((emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='g')&&(emailRetrieve.charAt(i+2)=='m')&&(emailRetrieve.charAt(i+3)=='a')&&(emailRetrieve.charAt(i+4)=='i')&&(emailRetrieve.charAt(i+5)=='l')&&(emailRetrieve.charAt(i+6)=='.')&&(emailRetrieve.charAt(i+7)=='c')&&(emailRetrieve.charAt(i+8)=='o')&&(emailRetrieve.charAt(i+9)=='m'))
+                        if((emailRetrieve.charAt(0)!='@')&&(emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='g')&&(emailRetrieve.charAt(i+2)=='m')&&(emailRetrieve.charAt(i+3)=='a')&&(emailRetrieve.charAt(i+4)=='i')&&(emailRetrieve.charAt(i+5)=='l')&&(emailRetrieve.charAt(i+6)=='.')&&(emailRetrieve.charAt(i+7)=='c')&&(emailRetrieve.charAt(i+8)=='o')&&(emailRetrieve.charAt(i+9)=='m'))
                         {
-                            Toast.makeText(getApplicationContext(), "gmail.com match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "gmail.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='g')&&(emailRetrieve.charAt(i+2)=='m')&&(emailRetrieve.charAt(i+3)=='a')&&(emailRetrieve.charAt(i+4)=='i')&&(emailRetrieve.charAt(i+5)=='l')&&(emailRetrieve.charAt(i+6)=='.')&&(emailRetrieve.charAt(i+7)=='c')&&(emailRetrieve.charAt(i+8)=='a'))
+                        else if((emailRetrieve.charAt(0)!='@')&&(emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='g')&&(emailRetrieve.charAt(i+2)=='m')&&(emailRetrieve.charAt(i+3)=='a')&&(emailRetrieve.charAt(i+4)=='i')&&(emailRetrieve.charAt(i+5)=='l')&&(emailRetrieve.charAt(i+6)=='.')&&(emailRetrieve.charAt(i+7)=='c')&&(emailRetrieve.charAt(i+8)=='a'))
                         {
-                            Toast.makeText(getApplicationContext(), "gmail.ca match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "gmail.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='o')&&(emailRetrieve.charAt(i+2)=='u')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='l')&&(emailRetrieve.charAt(i+5)=='o')&&(emailRetrieve.charAt(i+6)=='o')&&(emailRetrieve.charAt(i+7)=='o')&&(emailRetrieve.charAt(i+8)=='k')&&(emailRetrieve.charAt(i+9)=='.')&&(emailRetrieve.charAt(i+10)=='c')&&(emailRetrieve.charAt(i+11)=='o')&&(emailRetrieve.charAt(i+12)=='m'))
+                        else if((emailRetrieve.charAt(0)!='@')&&(emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='o')&&(emailRetrieve.charAt(i+2)=='u')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='l')&&(emailRetrieve.charAt(i+5)=='o')&&(emailRetrieve.charAt(i+6)=='o')&&(emailRetrieve.charAt(i+7)=='o')&&(emailRetrieve.charAt(i+8)=='k')&&(emailRetrieve.charAt(i+9)=='.')&&(emailRetrieve.charAt(i+10)=='c')&&(emailRetrieve.charAt(i+11)=='o')&&(emailRetrieve.charAt(i+12)=='m'))
                         {
-                            Toast.makeText(getApplicationContext(), "outlook.com match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "outlook.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='o')&&(emailRetrieve.charAt(i+2)=='u')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='l')&&(emailRetrieve.charAt(i+5)=='o')&&(emailRetrieve.charAt(i+6)=='o')&&(emailRetrieve.charAt(i+7)=='o')&&(emailRetrieve.charAt(i+8)=='k')&&(emailRetrieve.charAt(i+9)=='.')&&(emailRetrieve.charAt(i+10)=='c')&&(emailRetrieve.charAt(i+11)=='a'))
+                        else if((emailRetrieve.charAt(0)!='@')&&(emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='o')&&(emailRetrieve.charAt(i+2)=='u')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='l')&&(emailRetrieve.charAt(i+5)=='o')&&(emailRetrieve.charAt(i+6)=='o')&&(emailRetrieve.charAt(i+7)=='o')&&(emailRetrieve.charAt(i+8)=='k')&&(emailRetrieve.charAt(i+9)=='.')&&(emailRetrieve.charAt(i+10)=='c')&&(emailRetrieve.charAt(i+11)=='a'))
                         {
-                            Toast.makeText(getApplicationContext(), "outlook.ca match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "outlook.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='h')&&(emailRetrieve.charAt(i+2)=='o')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='m')&&(emailRetrieve.charAt(i+5)=='a')&&(emailRetrieve.charAt(i+6)=='i')&&(emailRetrieve.charAt(i+7)=='l')&&(emailRetrieve.charAt(i+8)=='.')&&(emailRetrieve.charAt(i+9)=='c')&&(emailRetrieve.charAt(i+10)=='o')&&(emailRetrieve.charAt(i+11)=='m'))
+                        else if((emailRetrieve.charAt(0)!='@')&&(emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='h')&&(emailRetrieve.charAt(i+2)=='o')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='m')&&(emailRetrieve.charAt(i+5)=='a')&&(emailRetrieve.charAt(i+6)=='i')&&(emailRetrieve.charAt(i+7)=='l')&&(emailRetrieve.charAt(i+8)=='.')&&(emailRetrieve.charAt(i+9)=='c')&&(emailRetrieve.charAt(i+10)=='o')&&(emailRetrieve.charAt(i+11)=='m'))
                         {
-                            Toast.makeText(getApplicationContext(), "hotmail.com match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "hotmail.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
-                        else if((emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='h')&&(emailRetrieve.charAt(i+2)=='o')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='m')&&(emailRetrieve.charAt(i+5)=='a')&&(emailRetrieve.charAt(i+6)=='i')&&(emailRetrieve.charAt(i+7)=='l')&&(emailRetrieve.charAt(i+8)=='.')&&(emailRetrieve.charAt(i+9)=='c')&&(emailRetrieve.charAt(i+10)=='a'))
+                        else if((emailRetrieve.charAt(0)!='@')&&(emailRetrieve.charAt(i)=='@')&&(emailRetrieve.charAt(i+1)=='h')&&(emailRetrieve.charAt(i+2)=='o')&&(emailRetrieve.charAt(i+3)=='t')&&(emailRetrieve.charAt(i+4)=='m')&&(emailRetrieve.charAt(i+5)=='a')&&(emailRetrieve.charAt(i+6)=='i')&&(emailRetrieve.charAt(i+7)=='l')&&(emailRetrieve.charAt(i+8)=='.')&&(emailRetrieve.charAt(i+9)=='c')&&(emailRetrieve.charAt(i+10)=='a'))
                         {
-                            Toast.makeText(getApplicationContext(), "hotmail.ca match found", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "hotmail.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if(i==(emailRetrieve.length()-1))
