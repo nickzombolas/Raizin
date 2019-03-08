@@ -48,7 +48,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {          //once an item is clicked it will open the assignmentActivity
             //openDialogFragment();
-                Toast.makeText(SkinTypeDeterminationActivity.this, skinColor[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(SkinTypeDeterminationActivity.this, skinColor[position]+" selected", Toast.LENGTH_SHORT).show();
                 //need to store the selected skin type
                 selectedSkinTone=skinColor[position];
                 //determined from nivea sunscreen guide for all skin types

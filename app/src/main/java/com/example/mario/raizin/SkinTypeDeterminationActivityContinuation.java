@@ -38,7 +38,7 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(SkinTypeDeterminationActivityContinuation.this, skinType[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(SkinTypeDeterminationActivityContinuation.this, skinType[position]+" selected", Toast.LENGTH_SHORT).show();
                 //need to store the selected skin type
                 selectedSkinType=skinType[position];
                 //determined from nivea sunscreen guide for all skin types
