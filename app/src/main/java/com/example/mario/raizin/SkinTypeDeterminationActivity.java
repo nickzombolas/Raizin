@@ -114,6 +114,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);  //was HomeFeed.class
                     in.putExtra("spfFactor","30");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));   //was divide by 60
+                    in.putExtra("skinToneSelected", "Pale white skin");
                     startActivity(in);
                 }
                 else if(skinToneSelection=="White skin")
@@ -121,6 +122,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in = new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                     in.putExtra("spfFactor", "30");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                    in.putExtra("skinToneSelected", "White skin");
                     startActivity(in);
                 }
                 else if(skinToneSelection=="Light brown or olive skin")
@@ -128,6 +130,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                     in.putExtra("spfFactor","30");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                    in.putExtra("skinToneSelected", "Light brown or olive skin");
                     startActivity(in);
                 }
                 else if(skinToneSelection=="Brown skin")
@@ -135,6 +138,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                         Intent in = new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                         in.putExtra("spfFactor", "15");
                         in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                        in.putExtra("skinToneSelected", "Brown skin");
                         startActivity(in);
                 }
                 else if(skinToneSelection=="Dark brown or black skin")
@@ -142,6 +146,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                     in.putExtra("spfFactor","15");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                    in.putExtra("skinToneSelected", "Dark brown or black skin");
                     startActivity(in);
                 }
 

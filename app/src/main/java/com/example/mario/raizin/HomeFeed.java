@@ -22,6 +22,7 @@ public class HomeFeed extends AppCompatActivity {
     Button logoutButton;
     TextView recommendedIntervalOfApplicationObject;
     TextView skinTypeDisplayObject;
+    TextView skinToneDisplayObject;
 
     public void onBackPressed() {
         //super.onBackPressed();
@@ -40,11 +41,14 @@ public class HomeFeed extends AppCompatActivity {
         recommendedIntervalOfApplicationObject=(TextView)findViewById(R.id.recommendedIntervalOfApplication);
         recommendedSPFLevelObject.setVisibility(View.VISIBLE);
         skinTypeDisplayObject=(TextView)findViewById(R.id.skinTypeDisplay);
+        skinToneDisplayObject=(TextView)findViewById(R.id.skinToneID);
 
         Intent inSkinType=getIntent();
         String spfFactor=inSkinType.getStringExtra("spfFactor");
         recommendedSPFLevelObject.setText("Recommended SPF Level: "+spfFactor);
         String skinType=inSkinType.getStringExtra("skinTypeChosen");
+        String skinTone=inSkinType.getStringExtra("skinToneSelected");
+        skinToneDisplayObject.setText("Skin tone: "+skinTone);
         skinTypeDisplayObject.setText("Skin Type: "+skinType);
         int estimatedTime=inSkinType.getIntExtra("estimatedTime",0);
         Toast.makeText(getApplicationContext(), "Estimated Time without UV index consideration"+estimatedTime, Toast.LENGTH_SHORT).show();
