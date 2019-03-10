@@ -18,15 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginorSignUpActivity" />
+        <activity android:name=".LoginorSignUpActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".userInfo"
             android:parentActivityName=".LoginorSignUpActivity" />
-        <activity android:name=".SkinTypeDeterminationActivity" />
-        <activity android:name=".HomeFeed" />
-        <activity android:name=".GeneralInformationActivity" />
-        <activity android:name=".TimeOutsideActivity" />
-        <activity android:name=".SkinTypeDeterminationActivityContinuation"></activity>
+        <activity android:name=".SkinTypeDeterminationActivity" android:screenOrientation="portrait" />
+        <activity android:name=".HomeFeed" android:screenOrientation="portrait" />
+        <activity android:name=".GeneralInformationActivity" android:screenOrientation="portrait" />
+        <activity android:name=".TimeOutsideActivity" android:screenOrientation="portrait" />
+        <activity android:name=".SkinTypeDeterminationActivityContinuation" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
