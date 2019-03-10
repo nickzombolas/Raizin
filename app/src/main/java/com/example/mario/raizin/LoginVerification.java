@@ -28,13 +28,13 @@ public class LoginVerification extends AppCompatActivity {
             startActivity(intent);
         }
         else{
-            Toast.makeText(getApplicationContext(), "Please enter a proper credentials", Toast.LENGTH_SHORT).show();
-            Toast.makeText(getApplicationContext(), password, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Please enter proper credentials", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), password, Toast.LENGTH_SHORT).show();
             Toast.makeText(getApplicationContext(), email, Toast.LENGTH_SHORT).show();
             Toast.makeText(getApplicationContext(), passWordRetrieve, Toast.LENGTH_SHORT).show();
-            Toast.makeText(getApplicationContext(), emailRetrieve, Toast.LENGTH_SHORT).show();
-            //Intent back = new Intent(getApplicationContext(), LoginorSignUpActivity.class);
-            //startActivity(back);
+            Toast.makeText(getApplicationContext(), emailRetrieve, Toast.LENGTH_SHORT).show();*/
+            Intent back = new Intent(getApplicationContext(), LoginorSignUpActivity.class);
+            startActivity(back);
         }
 
     }
