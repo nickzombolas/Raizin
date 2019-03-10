@@ -26,7 +26,8 @@
         <activity android:name=".HomeFeed" />
         <activity android:name=".GeneralInformationActivity" />
         <activity android:name=".TimeOutsideActivity" />
-        <activity android:name=".SkinTypeDeterminationActivityContinuation"></activity>
+        <activity android:name=".SkinTypeDeterminationActivityContinuation" />
+        <activity android:name=".LoginVerification"></activity>
     </application>
 
 </manifest>

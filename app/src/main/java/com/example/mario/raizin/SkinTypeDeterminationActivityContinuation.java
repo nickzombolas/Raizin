@@ -58,6 +58,9 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                 {
                     skinTypeSelection="Normal Skin";
                 }
+                else{
+                    skinTypeSelection="Not selected";
+                }
 
             }
         });
@@ -135,12 +138,17 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     inSkinType.putExtra("skinTypeChosen", "Normal Skin");
                     startActivity(inSkinType);
                 }
+                else if(skinTypeSelection=="Not selected")
+                {
+                    Toast.makeText(getApplicationContext(), "Please select a skin type", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-                Intent intent = new Intent(getApplicationContext(), userInfo.class);
+                Intent intent = new Intent(getApplicationContext(), SkinTypeDeterminationActivity.class);    //was userInfo
                 startActivity(intent);
             }
         });

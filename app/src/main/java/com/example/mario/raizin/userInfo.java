@@ -31,31 +31,29 @@ public class userInfo extends AppCompatActivity {
     boolean emailAddressCheck;
 
 
-    public static final String MyPREFERENCES = "MyPrefs";
-    public static final String firstNameString = "firstNameKey";
-    public static final String lastNameString="lastNameKey";
-    public static final String passwordString = "passwordKey";
-    public static final String emailAddressString="emailAddressKey";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
-        SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
-        myDataBase.execSQL("CREATE TABLE IF NOT EXISTS UserInfoTable(CourseID VARCHAR, CourseTitle VARCHAR, CourseCode VARCHAR);");
+
+
         editTextFirstName=(EditText)findViewById(R.id.firstNameID);
         editTextLastName=(EditText)findViewById(R.id.lastNameID);
         editTextPassword=(EditText)findViewById(R.id.passwordID);
         editTextEmailAddress=(EditText)findViewById(R.id.emailAddressID);
         nextButtonObject=(Button)findViewById(R.id.nextButton);
         cancelButtonObject=(Button)findViewById(R.id.cancelButton);
-        sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
         nextButtonObject.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                //SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
+                //myDataBase.execSQL("CREATE TABLE IF NOT EXISTS UserInfoTable(firstName VARCHAR, lastName VARCHAR, password VARCHAR, email VARCHAR);");
+                //SharedPreferences.Editor editor = sharedPreferences.edit();
                 String firstNameRetrieve = editTextFirstName.getText().toString();
                 if(!TextUtils.isEmpty(firstNameRetrieve)) {
-                    editor.putString(firstNameString, firstNameRetrieve);
+                    //editor.putString(firstNameString, firstNameRetrieve);
                     firstNameCheck=true;
                 }
                 else{
@@ -65,7 +63,7 @@ public class userInfo extends AppCompatActivity {
 
                 String lastNameRetrieve=editTextLastName.getText().toString();
                 if(!TextUtils.isEmpty(lastNameRetrieve)) {
-                    editor.putString(lastNameString, lastNameRetrieve);
+                    //editor.putString(lastNameString, lastNameRetrieve);
                     lastNameCheck=true;
                 }
                 else
@@ -76,7 +74,7 @@ public class userInfo extends AppCompatActivity {
                 String passwordRetrieve = editTextPassword.getText().toString();
                 if(!TextUtils.isEmpty(passwordRetrieve))
                 {
-                    editor.putString(passwordString, passwordRetrieve);
+                    //editor.putString(passwordString, passwordRetrieve);
                     passWordCheck=true;
                 }
                 else
@@ -150,8 +148,15 @@ public class userInfo extends AppCompatActivity {
                 if(firstNameCheck==true&&lastNameCheck==true&&passWordCheck==true&&emailAddressCheck==true) {
                     //editor.putString(emailAddressString, emailAddressRetrieve);
                     //editor.commit();
+
+
                     Intent intent = new Intent(getApplicationContext(), SkinTypeDeterminationActivity.class);
+                    intent.putExtra("firstNameRetrieve", firstNameRetrieve);
+                    intent.putExtra("lastNameRetrieve", lastNameRetrieve);
+                    intent.putExtra("passwordRetrieve", passwordRetrieve);
+                    intent.putExtra("emailAddressRetrieve", emailAddressRetrieve);
                     startActivity(intent);
+
                 }
             }
         });

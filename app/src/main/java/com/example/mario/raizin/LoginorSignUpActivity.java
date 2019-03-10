@@ -3,6 +3,8 @@ package com.example.mario.raizin;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -33,6 +35,11 @@ public class LoginorSignUpActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.passWord);
         loginButtonObject = findViewById(R.id.loginButton);
         signUpButtonObject = findViewById(R.id.signUpButton);
+        /*SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
+        Cursor result = myDataBase.rawQuery("Select * from UserTable", null);
+        result.moveToFirst();
+        final String password = result.getString(1);              //store the value of the first column into a string called courseID
+        final String email = result.getString(2);*/           //store the value of the second column into a string called courseTitle
         //SharedPreferences sharedPreferences=getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
 
@@ -51,6 +58,7 @@ public class LoginorSignUpActivity extends AppCompatActivity {
                 //retrieve info from sharedPreference and if true go to the Homefeed
                 String emailRetrieve=editTextEmail.getText().toString();
                 String passWordRetrieve=editTextPassword.getText().toString();
+                //pass the emailRetrieve and the passWordRetrieve to the LoginVerification acrivity
 
                 if(!TextUtils.isEmpty(emailRetrieve)) {
                     //need to check whether what the user typed is indeed an email addres
@@ -92,33 +100,31 @@ public class LoginorSignUpActivity extends AppCompatActivity {
                             break;
                         }
                     }
-                    String emailStored=sharedPreferences.getString("emailAddressKey", null);
+                    /*String emailStored=sharedPreferences.getString("emailAddressKey", null);
                     if(emailRetrieve==emailStored)
                     {
                         emailMatchChecked=true;
 
-                    }
+                    }*/
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Please enter a proper email address", Toast.LENGTH_SHORT).show();
 
                 }
                 if(!TextUtils.isEmpty(passWordRetrieve)) {
-                    String passwordStored=sharedPreferences.getString("passwordKey", null);
+                    /*String passwordStored=sharedPreferences.getString("passwordKey", null);
                     if(passWordRetrieve==passwordStored)
                     {
                         passwordMatchChecked=true;
-                    }
+                    }*/
+                    Intent in = new Intent(getApplicationContext(), LoginVerification.class);
+                    in.putExtra("passWordRetrieve",passWordRetrieve);
+                    in.putExtra("emailAddressRetrieve", emailRetrieve);
+                    startActivity(in);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Please enter a proper password", Toast.LENGTH_SHORT).show();
 
-                }
-                if((emailMatchChecked==true)&&(passwordMatchChecked==true))
-                {
-                    //openHomeFeed();
-                    Intent intent = new Intent(getApplicationContext(), HomeFeed.class);
-                    startActivity(intent);
                 }
 
             }
