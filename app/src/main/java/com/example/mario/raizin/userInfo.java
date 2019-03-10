@@ -48,12 +48,8 @@ public class userInfo extends AppCompatActivity {
         nextButtonObject.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-                //SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
-                //myDataBase.execSQL("CREATE TABLE IF NOT EXISTS UserInfoTable(firstName VARCHAR, lastName VARCHAR, password VARCHAR, email VARCHAR);");
-                //SharedPreferences.Editor editor = sharedPreferences.edit();
                 String firstNameRetrieve = editTextFirstName.getText().toString();
                 if(!TextUtils.isEmpty(firstNameRetrieve)) {
-                    //editor.putString(firstNameString, firstNameRetrieve);
                     firstNameCheck=true;
                 }
                 else{
@@ -63,7 +59,6 @@ public class userInfo extends AppCompatActivity {
 
                 String lastNameRetrieve=editTextLastName.getText().toString();
                 if(!TextUtils.isEmpty(lastNameRetrieve)) {
-                    //editor.putString(lastNameString, lastNameRetrieve);
                     lastNameCheck=true;
                 }
                 else
@@ -74,7 +69,6 @@ public class userInfo extends AppCompatActivity {
                 String passwordRetrieve = editTextPassword.getText().toString();
                 if(!TextUtils.isEmpty(passwordRetrieve))
                 {
-                    //editor.putString(passwordString, passwordRetrieve);
                     passWordCheck=true;
                 }
                 else
@@ -91,44 +85,32 @@ public class userInfo extends AppCompatActivity {
                     {
                         if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='g')&&(emailAddressRetrieve.charAt(i+2)=='m')&&(emailAddressRetrieve.charAt(i+3)=='a')&&(emailAddressRetrieve.charAt(i+4)=='i')&&(emailAddressRetrieve.charAt(i+5)=='l')&&(emailAddressRetrieve.charAt(i+6)=='.')&&(emailAddressRetrieve.charAt(i+7)=='c')&&(emailAddressRetrieve.charAt(i+8)=='o')&&(emailAddressRetrieve.charAt(i+9)=='m'))
                         {
-                            //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            //Toast.makeText(getApplicationContext(), "gmail.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='g')&&(emailAddressRetrieve.charAt(i+2)=='m')&&(emailAddressRetrieve.charAt(i+3)=='a')&&(emailAddressRetrieve.charAt(i+4)=='i')&&(emailAddressRetrieve.charAt(i+5)=='l')&&(emailAddressRetrieve.charAt(i+6)=='.')&&(emailAddressRetrieve.charAt(i+7)=='c')&&(emailAddressRetrieve.charAt(i+8)=='a'))
                         {
-                            //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            //Toast.makeText(getApplicationContext(), "gmail.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='o')&&(emailAddressRetrieve.charAt(i+2)=='u')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='l')&&(emailAddressRetrieve.charAt(i+5)=='o')&&(emailAddressRetrieve.charAt(i+6)=='o')&&(emailAddressRetrieve.charAt(i+7)=='o')&&(emailAddressRetrieve.charAt(i+8)=='k')&&(emailAddressRetrieve.charAt(i+9)=='.')&&(emailAddressRetrieve.charAt(i+10)=='c')&&(emailAddressRetrieve.charAt(i+11)=='o')&&(emailAddressRetrieve.charAt(i+12)=='m'))
                         {
-                            //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            //Toast.makeText(getApplicationContext(), "outlook.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='o')&&(emailAddressRetrieve.charAt(i+2)=='u')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='l')&&(emailAddressRetrieve.charAt(i+5)=='o')&&(emailAddressRetrieve.charAt(i+6)=='o')&&(emailAddressRetrieve.charAt(i+7)=='o')&&(emailAddressRetrieve.charAt(i+8)=='k')&&(emailAddressRetrieve.charAt(i+9)=='.')&&(emailAddressRetrieve.charAt(i+10)=='c')&&(emailAddressRetrieve.charAt(i+11)=='a'))
                         {
-                            //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            //Toast.makeText(getApplicationContext(), "outlook.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='h')&&(emailAddressRetrieve.charAt(i+2)=='o')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='m')&&(emailAddressRetrieve.charAt(i+5)=='a')&&(emailAddressRetrieve.charAt(i+6)=='i')&&(emailAddressRetrieve.charAt(i+7)=='l')&&(emailAddressRetrieve.charAt(i+8)=='.')&&(emailAddressRetrieve.charAt(i+9)=='c')&&(emailAddressRetrieve.charAt(i+10)=='o')&&(emailAddressRetrieve.charAt(i+11)=='m'))
                         {
-                            //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            //Toast.makeText(getApplicationContext(), "hotmail.com match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if((emailAddressRetrieve.charAt(0)!='@')&&(emailAddressRetrieve.charAt(i)=='@')&&(emailAddressRetrieve.charAt(i+1)=='h')&&(emailAddressRetrieve.charAt(i+2)=='o')&&(emailAddressRetrieve.charAt(i+3)=='t')&&(emailAddressRetrieve.charAt(i+4)=='m')&&(emailAddressRetrieve.charAt(i+5)=='a')&&(emailAddressRetrieve.charAt(i+6)=='i')&&(emailAddressRetrieve.charAt(i+7)=='l')&&(emailAddressRetrieve.charAt(i+8)=='.')&&(emailAddressRetrieve.charAt(i+9)=='c')&&(emailAddressRetrieve.charAt(i+10)=='a'))
                         {
-                            //editor.putString(emailAddressString, emailAddressRetrieve);
                             emailAddressCheck=true;
-                            //Toast.makeText(getApplicationContext(), "hotmail.ca match found", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         else if(i==(emailAddressRetrieve.length()-1))
@@ -146,10 +128,6 @@ public class userInfo extends AppCompatActivity {
                     emailAddressCheck=false;
                 }
                 if(firstNameCheck==true&&lastNameCheck==true&&passWordCheck==true&&emailAddressCheck==true) {
-                    //editor.putString(emailAddressString, emailAddressRetrieve);
-                    //editor.commit();
-
-
                     Intent intent = new Intent(getApplicationContext(), SkinTypeDeterminationActivity.class);
                     intent.putExtra("firstNameRetrieve", firstNameRetrieve);
                     intent.putExtra("lastNameRetrieve", lastNameRetrieve);

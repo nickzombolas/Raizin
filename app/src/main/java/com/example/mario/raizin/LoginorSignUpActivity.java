@@ -35,12 +35,6 @@ public class LoginorSignUpActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.passWord);
         loginButtonObject = findViewById(R.id.loginButton);
         signUpButtonObject = findViewById(R.id.signUpButton);
-        /*SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
-        Cursor result = myDataBase.rawQuery("Select * from UserTable", null);
-        result.moveToFirst();
-        final String password = result.getString(1);              //store the value of the first column into a string called courseID
-        final String email = result.getString(2);*/           //store the value of the second column into a string called courseTitle
-        //SharedPreferences sharedPreferences=getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
 
         signUpButtonObject.setOnClickListener(new View.OnClickListener() {
@@ -55,10 +49,9 @@ public class LoginorSignUpActivity extends AppCompatActivity {
         loginButtonObject.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-                //retrieve info from sharedPreference and if true go to the Homefeed
                 String emailRetrieve=editTextEmail.getText().toString();
                 String passWordRetrieve=editTextPassword.getText().toString();
-                //pass the emailRetrieve and the passWordRetrieve to the LoginVerification acrivity
+                //pass the emailRetrieve and the passWordRetrieve to the LoginVerification activity
 
                 if(!TextUtils.isEmpty(emailRetrieve)) {
                     //need to check whether what the user typed is indeed an email addres
@@ -100,23 +93,14 @@ public class LoginorSignUpActivity extends AppCompatActivity {
                             break;
                         }
                     }
-                    /*String emailStored=sharedPreferences.getString("emailAddressKey", null);
-                    if(emailRetrieve==emailStored)
-                    {
-                        emailMatchChecked=true;
 
-                    }*/
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Please enter a proper email address", Toast.LENGTH_SHORT).show();
 
                 }
                 if(!TextUtils.isEmpty(passWordRetrieve)) {
-                    /*String passwordStored=sharedPreferences.getString("passwordKey", null);
-                    if(passWordRetrieve==passwordStored)
-                    {
-                        passwordMatchChecked=true;
-                    }*/
+
                     Intent in = new Intent(getApplicationContext(), LoginVerification.class);
                     in.putExtra("passWordRetrieve",passWordRetrieve);
                     in.putExtra("emailAddressRetrieve", emailRetrieve);

@@ -1,6 +1,7 @@
 package com.example.mario.raizin;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,6 +56,10 @@ public class HomeFeed extends AppCompatActivity {
         skinTypeDisplayObject.setText("Skin Type: "+skinType);
         int estimatedTime=inSkinType.getIntExtra("estimatedTime",0);
         Toast.makeText(getApplicationContext(), "Estimated Time without UV index consideration"+estimatedTime, Toast.LENGTH_SHORT).show();
+        SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
+
+        myDataBase.execSQL("CREATE TABLE IF NOT EXISTS UserSkinSelectionTable(spf VARCHAR, type VARCHAR, tone VARCHAR);");
+        myDataBase.execSQL("INSERT INTO UserSkinSelectionTable VALUES('"+spfFactor+"', '"+skinType+"', '"+skinTone+"' );");
 
         recommendedSPFLevelObject.setText("Recommended SPF Level: "+spfFactor);
         if(skinType=="Oily")
