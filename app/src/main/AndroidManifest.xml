@@ -3,6 +3,9 @@
     package="com.example.mario.raizin">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -21,7 +24,7 @@
         <activity android:name=".LoginorSignUpActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".userInfo"
-            android:parentActivityName=".LoginorSignUpActivity" />
+            android:parentActivityName=".LoginorSignUpActivity" android:screenOrientation="portrait" />
         <activity android:name=".SkinTypeDeterminationActivity" android:screenOrientation="portrait" />
         <activity android:name=".HomeFeed" android:screenOrientation="portrait" />
         <activity android:name=".GeneralInformationActivity" android:screenOrientation="portrait" />
