@@ -1,6 +1,7 @@
 package com.example.mario.raizin;
 
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -40,6 +41,21 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
         skinTypeChosen=(TextView)findViewById(R.id.skinTypeSelection);
         nextButton=(Button)findViewById(R.id.nextButtonID);
         cancelButton=(Button)findViewById(R.id.cancelButtonID);
+        Intent intent=getIntent();
+        String firstNameToBeStored=intent.getStringExtra("firstNameRetrieve");
+        String lastNameToBeStored=intent.getStringExtra("lastNameRetrieve");
+        String passwordToBeStored=intent.getStringExtra("passwordRetrieve");
+        String emailAddressToBeStored=intent.getStringExtra("emailAddressRetrieve");
+        //creation of a data base object called myDataBase to create a database called DataBase
+        SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
+        //creation of a course table called CourseTable which takes three parameters, CourseID, CourseTitle and CourseCode
+        myDataBase.execSQL("CREATE TABLE IF NOT EXISTS UserTable(password VARCHAR, email VARCHAR, firstname VARCHAR);");
+        //insertion of default values into the database
+        myDataBase.execSQL("INSERT INTO UserTable VALUES('"+passwordToBeStored+"', '"+emailAddressToBeStored+"', '"+firstNameToBeStored+"' );");
+        //myDataBase.execSQL("INSERT INTO CourseTable VALUES('CourseID:2', 'Programming', 'COEN 243');");
+        //SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
+        //myDataBase.execSQL("CREATE TABLE IF NOT EXISTS UserInfoTable(firstName VARCHAR, lastName VARCHAR, password VARCHAR, email VARCHAR);");
+        //myDataBase.execSQL("INSERT INTO UserInfoTable VALUES('firstNameToBeStored', 'lastNameToBeStored', 'passwordToBeStored', 'emailAddressToBeStored');");
         listViewObject = (ListView) findViewById(R.id.listViewSkinColor);   //creation of a listViewObject which is then used to set up the listView
         ArrayAdapter arrayAdapter = new ArrayAdapter<String>(this, R.layout.simple_list, skinColor); //puts whatever is in the totalCourseArray into the listView
         listViewObject.setAdapter(arrayAdapter);
@@ -48,7 +64,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {          //once an item is clicked it will open the assignmentActivity
             //openDialogFragment();
-                Toast.makeText(SkinTypeDeterminationActivity.this, skinColor[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(SkinTypeDeterminationActivity.this, skinColor[position]+" selected", Toast.LENGTH_SHORT).show();
                 //need to store the selected skin type
                 selectedSkinTone=skinColor[position];
                 //determined from nivea sunscreen guide for all skin types
@@ -103,6 +119,9 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     skinToneSelection="Dark brown or black skin";
                     //estimatedTimeOfSunscreenDuration in minutes
                 }
+                else{
+                    skinToneSelection="Not selected";
+                }
             }
         });
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +133,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);  //was HomeFeed.class
                     in.putExtra("spfFactor","30");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));   //was divide by 60
+                    in.putExtra("skinToneSelected", "Pale white skin");
                     startActivity(in);
                 }
                 else if(skinToneSelection=="White skin")
@@ -121,6 +141,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in = new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                     in.putExtra("spfFactor", "30");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                    in.putExtra("skinToneSelected", "White skin");
                     startActivity(in);
                 }
                 else if(skinToneSelection=="Light brown or olive skin")
@@ -128,6 +149,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                     in.putExtra("spfFactor","30");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                    in.putExtra("skinToneSelected", "Light brown or olive skin");
                     startActivity(in);
                 }
                 else if(skinToneSelection=="Brown skin")
@@ -135,6 +157,7 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                         Intent in = new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                         in.putExtra("spfFactor", "15");
                         in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                        in.putExtra("skinToneSelected", "Brown skin");
                         startActivity(in);
                 }
                 else if(skinToneSelection=="Dark brown or black skin")
@@ -142,8 +165,15 @@ public class SkinTypeDeterminationActivity extends AppCompatActivity {
                     Intent in=new Intent(getApplicationContext(), SkinTypeDeterminationActivityContinuation.class);
                     in.putExtra("spfFactor","15");
                     in.putExtra("estimatedTime", (estimatedTimeOfSunscreenDuration/60));
+                    in.putExtra("skinToneSelected", "Dark brown or black skin");
                     startActivity(in);
                 }
+                else if(skinToneSelection=="Not selected")
+                {
+                    Toast.makeText(getApplicationContext(), "Please selected a skin tone", Toast.LENGTH_SHORT).show();
+
+                }
+
 
             }
         });

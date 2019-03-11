@@ -38,7 +38,7 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(SkinTypeDeterminationActivityContinuation.this, skinType[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(SkinTypeDeterminationActivityContinuation.this, skinType[position]+" selected", Toast.LENGTH_SHORT).show();
                 //need to store the selected skin type
                 selectedSkinType=skinType[position];
                 //determined from nivea sunscreen guide for all skin types
@@ -58,6 +58,9 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                 {
                     skinTypeSelection="Normal Skin";
                 }
+                else{
+                    skinTypeSelection="Not selected";
+                }
 
             }
         });
@@ -72,10 +75,12 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-
+                    Intent inTone=getIntent();
+                    String selectedSkinTone=inTone.getStringExtra("skinToneSelected");
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
                     inSkinType.putExtra("estimatedTime", estimatedTime);
+                    inSkinType.putExtra("skinToneSelected", selectedSkinTone);
                     inSkinType.putExtra("skinTypeChosen", "Oily Skin");
                     startActivity(inSkinType);
 
@@ -92,47 +97,58 @@ public class SkinTypeDeterminationActivityContinuation extends AppCompatActivity
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-
+                    Intent inTone=getIntent();
+                    String selectedSkinTone=inTone.getStringExtra("skinToneSelected");
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
                     inSkinType.putExtra("estimatedTime", estimatedTime);
+                    inSkinType.putExtra("skinToneSelected", selectedSkinTone);
                     inSkinType.putExtra("skinTypeChosen", "Dry Skin");
                     startActivity(inSkinType);
                 }
-                else if(skinTypeSelection=="Combination")
+                else if(skinTypeSelection=="Combination Skin")
                 {
                     //need to get the info from SkinTypeDeterminationActivity and pass it to HomeFeed activity
                     Intent in=getIntent();
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-
+                    Intent inTone=getIntent();
+                    String selectedSkinTone=inTone.getStringExtra("skinToneSelected");
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
                     inSkinType.putExtra("estimatedTime", estimatedTime);
+                    inSkinType.putExtra("skinToneSelected", selectedSkinTone);
                     inSkinType.putExtra("skinTypeChosen", "Combination Skin");
                     startActivity(inSkinType);
                 }
-                else if(skinTypeSelection=="Normal")
+                else if(skinTypeSelection=="Normal Skin")
                 {
                     //need to get the info from SkinTypeDeterminationActivity and pass it to HomeFeed activity
                     Intent in=getIntent();
                     String spfFactor=in.getStringExtra("spfFactor");
                     Intent inType=getIntent();
                     int estimatedTime=inType.getIntExtra("estimatedTime",0);
-
+                    Intent inTone=getIntent();
+                    String selectedSkinTone=inTone.getStringExtra("skinToneSelected");
                     Intent inSkinType=new Intent(getApplicationContext(), HomeFeed.class);
                     inSkinType.putExtra("spfFactor", spfFactor);
                     inSkinType.putExtra("estimatedTime", estimatedTime);
+                    inSkinType.putExtra("skinToneSelected", selectedSkinTone);
                     inSkinType.putExtra("skinTypeChosen", "Normal Skin");
                     startActivity(inSkinType);
+                }
+                else if(skinTypeSelection=="Not selected")
+                {
+                    Toast.makeText(getApplicationContext(), "Please select a skin type", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-                Intent intent = new Intent(getApplicationContext(), userInfo.class);
+                Intent intent = new Intent(getApplicationContext(), SkinTypeDeterminationActivity.class);    //was userInfo
                 startActivity(intent);
             }
         });

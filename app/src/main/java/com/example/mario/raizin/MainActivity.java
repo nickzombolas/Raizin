@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                     ignored.printStackTrace();
                 }
             }
-        }, 5000);  // Give a 5 seconds delay.
+        }, 3000);  // Give a 3 seconds delay.
     }
 
     @Override
