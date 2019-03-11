@@ -1,6 +1,7 @@
 package com.example.mario.raizin;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,7 +23,11 @@ public class HomeFeed extends AppCompatActivity {
     Button logoutButton;
     TextView recommendedIntervalOfApplicationObject;
     TextView skinTypeDisplayObject;
-
+    TextView skinToneDisplayObject;
+    String[] skinTipOily=new String[10];
+    String[] skinTipDry=new String[10];
+    String[] skinTipCombination=new String[10];
+    String[] skinTipNormal=new String[10];
     public void onBackPressed() {
         //super.onBackPressed();
         // dont call **super**, if u want disable back button in current screen.
@@ -40,21 +45,59 @@ public class HomeFeed extends AppCompatActivity {
         recommendedIntervalOfApplicationObject=(TextView)findViewById(R.id.recommendedIntervalOfApplication);
         recommendedSPFLevelObject.setVisibility(View.VISIBLE);
         skinTypeDisplayObject=(TextView)findViewById(R.id.skinTypeDisplay);
+        skinToneDisplayObject=(TextView)findViewById(R.id.skinToneID);
 
         Intent inSkinType=getIntent();
         String spfFactor=inSkinType.getStringExtra("spfFactor");
         recommendedSPFLevelObject.setText("Recommended SPF Level: "+spfFactor);
         String skinType=inSkinType.getStringExtra("skinTypeChosen");
+        String skinTone=inSkinType.getStringExtra("skinToneSelected");
+        skinToneDisplayObject.setText("Skin tone: "+skinTone);
         skinTypeDisplayObject.setText("Skin Type: "+skinType);
         int estimatedTime=inSkinType.getIntExtra("estimatedTime",0);
         Toast.makeText(getApplicationContext(), "Estimated Time without UV index consideration"+estimatedTime, Toast.LENGTH_SHORT).show();
+        SQLiteDatabase myDataBase = openOrCreateDatabase("Database", MODE_PRIVATE, null);
+
+        myDataBase.execSQL("CREATE TABLE IF NOT EXISTS UserSkinSelectionTable(spf VARCHAR, type VARCHAR, tone VARCHAR);");
+        myDataBase.execSQL("INSERT INTO UserSkinSelectionTable VALUES('"+spfFactor+"', '"+skinType+"', '"+skinTone+"' );");
 
         recommendedSPFLevelObject.setText("Recommended SPF Level: "+spfFactor);
+        if(skinType=="Oily")
+        {
+            //Tips for oily skin here
+            //then randomly choose from them
+            //source: https://health.howstuffworks.com/skin-care/beauty/sun-care/quick-tips-best-sunscreens-for-oily-skin.htm
+            //https://www.verywellhealth.com/how-to-choose-sunscreen-for-acne-prone-skin-15916
+            skinTipOily[0]="Look for oil-free and waterbased sunscreen products when conducting your purchases, this will hellp prevent your pores from clogging";
+            skinTipOily[1]="It is preferable to select gels in terms of skin care products since they are quickly absorbed into the skin.";
+            skinTipOily[2]="Use a cleanser containing salyscylic acid often in order to remove excess oil from the surface of your skin.";
+
+        }
+        else if(skinType=="Dry")
+        {
+            //Tips for dry skin here
+            //then randomly choose from them
+            //source:https://www.verywellhealth.com/how-to-choose-sunscreen-for-acne-prone-skin-15916
+            //source:https://www.cbc.ca/life/style/choosing-the-right-sunscreen-for-your-skin-type-1.4736900
+            skinTipDry[0]="Sunscreen lotions or creams are highly recommended for dry skin.";
+            skinTipDry[1]="It is important to constantly moisturize your skin, make sure to apply the sunscreen first before applying the moisturizer.";
+            skinTipDry[2]="Look for skin products that are lacking in zinc oxide, which is known to dry skin and instead look for products constaining glycerins and oils.";
+        }
+        else if(skinType=="Combination")
+        {
+            skinTipCombination[0]="Look for oil-free and waterbased sunscreen products when conducting your purchases, this will hellp prevent your pores from clogging";
+            skinTipCombination[1]="For oily areas of skin, it is preferable to select gels in terms of skin care products since they are quickly absorbed into the skin.";
+            skinTipCombination[2]="Sunscreen lotions or creams are highly recommended for dry skin areas.";
+            skinTipCombination[3]="It is important to constantly moisturize your dry skin, make sure to apply the sunscreen first before applying the moisturizer.";
+            skinTipCombination[4]="Refrain from applying skin products that contain zinc oxide to dry skin areas, which is known to further dry skin and instead look for products constaining glycerins and oils.";
+        }
 
         generalInformationButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), GeneralInformationActivity.class);
+                //Intent inSkinType=new Intent(getApplicationContext(), GeneralInformationActivity.class);
+
                 startActivity(intent);
             }
         });
