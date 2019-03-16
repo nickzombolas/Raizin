@@ -21,15 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginorSignUpActivity" android:screenOrientation="portrait" />
-        <activity
-            android:name=".userInfo"
-            android:parentActivityName=".LoginorSignUpActivity" android:screenOrientation="portrait" />
-        <activity android:name=".SkinTypeDeterminationActivity" android:screenOrientation="portrait" />
         <activity android:name=".HomeFeed" android:screenOrientation="portrait" />
         <activity android:name=".GeneralInformationActivity" android:screenOrientation="portrait" />
         <activity android:name=".TimeOutsideActivity" android:screenOrientation="portrait" />
-        <activity android:name=".SkinTypeDeterminationActivityContinuation" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
